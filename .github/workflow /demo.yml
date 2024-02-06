@@ -1,6 +1,6 @@
 jobs:
   job-name:
-    runs-on: self-hosted
+    runs-on: [self-hosted, test, Linux]
     steps:
       - run:  echo "Deploying application...."
       - run:  pwd
