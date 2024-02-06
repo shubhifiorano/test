@@ -1,3 +1,5 @@
+name: github-demo
+on: [push]
 jobs:
   job-name:
     runs-on: [self-hosted, test, Linux]
