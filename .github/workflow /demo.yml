@@ -1,0 +1,10 @@
+jobs:
+  job-name:
+    runs-on: self-hosted
+    steps:
+      - run:  echo "Deploying application...."
+      - run:  pwd
+      - run:  whoami
+      - run:  cd/githubaction
+      - run:  ./CI-CD_github.sh
+      - run:  echo "Application successfully deployed."
