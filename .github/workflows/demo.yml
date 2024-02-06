@@ -8,5 +8,6 @@ jobs:
       - run:  pwd
       - run:  whoami
       - run:  cd /githubaction
+      - run:  pwd
       - run:  ./CI-CD_github.sh
       - run:  echo "Application successfully deployed."
