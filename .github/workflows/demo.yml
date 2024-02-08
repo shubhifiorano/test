@@ -1,11 +1,11 @@
 name: github-demo
 on: [push]
+defaults:
+      run:
+        working-directory: ./githubaction
 jobs:
   job-name:
     runs-on: [self-hosted, test, Linux]
-    defaults:
-      run:
-        working-directory: ./githubaction
     steps:
       - run:  echo "Deploying application...."
       - run:  pwd
