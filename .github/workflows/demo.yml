@@ -11,7 +11,8 @@ jobs:
       - run:  echo "Deploying application...."
       - run:  pwd
       - run:  whoami
-      - run:  ./github.sh
+      - run:  touch text.txt
+      # - run:  ./github.sh
       - run:  pwd
       # - run:  ./CI-CD_github.sh
       - run:  echo "Application successfully deployed."
