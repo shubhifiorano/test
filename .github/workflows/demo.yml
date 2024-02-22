@@ -12,7 +12,9 @@ jobs:
       - run:  pwd
       - run:  whoami
       # - run:  touch text.txt
-      - run:  ./github.sh
+      # - run:  ./github.sh
+      - run:  sudo cd /githubaction
+      - run:  touch text.txt
       - run:  pwd
       # - run:  ./CI-CD_github.sh
       - run:  echo "Application successfully deployed."
