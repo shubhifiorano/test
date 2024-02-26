@@ -13,7 +13,7 @@ jobs:
       - run:  whoami
       # - run:  touch text.txt
       # - run:  ./github.sh
-      - run:  sudo cd /githubaction
+      - run:  sudo -s cd /githubaction
       - run:  touch text.txt
       - run:  pwd
       # - run:  ./CI-CD_github.sh
