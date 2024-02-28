@@ -7,7 +7,7 @@ jobs:
   job-name:
     runs-on: [self-hosted, test, Linux]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
          path: /githubaction
       # - run:
