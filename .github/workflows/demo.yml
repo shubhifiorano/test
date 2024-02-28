@@ -8,7 +8,7 @@ jobs:
     runs-on: [self-hosted, test, Linux]
     steps:
       - uses: actions/checkout@v2
-      - run:  echo "Deploying application...."
+      - run:  echo "Deploying application....."
       - run:  pwd
       - run:  whoami
       # - run:  touch text.txt
