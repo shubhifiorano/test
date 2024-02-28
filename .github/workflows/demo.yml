@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - run:
           working-directory: /githubaction
-      - run:  echo "Deploying application...."
+      - run:  echo "Deploying application....."
       - run:  pwd
       - run:  whoami
       # - run:  touch text.txt
