@@ -8,8 +8,10 @@ jobs:
     runs-on: [self-hosted, test, Linux]
     steps:
       - uses: actions/checkout@v2
-      - run:
-          working-directory: /githubaction
+        with:
+         path: /githubaction
+      # - run:
+      #     working-directory: /githubaction
       - run:  echo "Deploying application....."
       - run:  pwd
       - run:  whoami
