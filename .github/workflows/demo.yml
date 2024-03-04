@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-         path: /githubaction
+         path: ./../../../../githubaction
       # - run:
       #     working-directory: /githubaction
       - run:  echo "Deploying application....."
@@ -17,8 +17,8 @@ jobs:
       - run:  whoami
       # - run:  touch text.txt
       # - run:  ./github.sh
-      - run:  sh cd /githubaction
-      - run:  pwd
+      # - run:  sh cd /githubaction
+      # - run:  pwd
       - run:  touch text.txt
       - run:  pwd
       # - run:  ./CI-CD_github.sh
