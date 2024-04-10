@@ -15,7 +15,7 @@ jobs:
       - run:  echo "Deploying application....."
       - run:  pwd
       - run:  whoami
-      - run:  ./text.sh
+      - run:  sudo ./text.sh
       # - run:  touch text.txt
       # - run:  ./github.sh
       # - run:  sh cd /githubaction
