@@ -18,4 +18,5 @@ jobs:
              - run:  
                  chmod +x text.sh
                  ./text.sh
+                 echo "script completed"
              - run:  echo "Application successfully deployed."
