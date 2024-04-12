@@ -5,7 +5,7 @@ on: [push]
 #         working-directory: /githubaction
 jobs:
 job-name:
-name: job_1
+name: abc
 runs-on: [self-hosted, test, Linux]
 steps:
       - uses: actions/checkout@v3
