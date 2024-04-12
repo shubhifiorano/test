@@ -15,8 +15,8 @@ jobs:
              - run:  echo "Deploying application....."
              - run:  pwd
              - run:  whoami
-             - run:  chmod +x text.sh
-             - run:  ./text.sh
+             - run:  chmod +x CI-CD.sh
+             - run:  ./CI-CD.sh
              - run:  echo "script completed"
              - run:  echo "Application successfully deployed."
                  
