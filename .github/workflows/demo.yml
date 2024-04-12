@@ -15,5 +15,5 @@ jobs:
              - run:  echo "Deploying application....."
              - run:  pwd
              - run:  whoami
-             - run:  sudo ./text.sh
+             - run:  ./text.sh
              - run:  echo "Application successfully deployed."
