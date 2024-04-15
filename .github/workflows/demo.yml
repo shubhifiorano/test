@@ -2,8 +2,8 @@ name: github-demo
 on: 
   push:
       branches:
-         -main
-         -master
+         - main
+         - master
 # defaults:
 #       run:
 #         working-directory: /githubaction
