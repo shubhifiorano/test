@@ -15,7 +15,7 @@ git clone $CLONE_URL
 
 cd $REPO_NAME
 
-rm -rf *.yml
+#rm -rf *.yml
 rev_num=`git log --pretty=format:"%H" -n 1`
 echo "RevNumber is "$rev_num
 
