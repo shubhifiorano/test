@@ -6,7 +6,7 @@ WORKSPACE_PATH=/actions-runner/_work/test
 REPO_NAME=test
 #WORKSPACE PATH - this is the place where it will clone the git repo and create the zips that will be imported. This workspace cannot be runtimedata/applications/repository as it will create two folders with the same name- one will be the pre-existing one and the other the checked out one. Moreover creating the zip will lead to a conflict and correct EP might not get imported. However, if the user is not going to do any development/ create EPs on the production environment and you still want to use the same path as runtimedata/applications/repository then firstly initialize that direcrory as git direcrory by running the git init command and then edit the .git/Config file to set the head correctly. Then modify the script to replace git clone with git pull (fetch + merge). And delete/ rename the zip after it has launched successfully.
 
-#CLONE_URL=
+CLONE_URL=https://github.com/shubhifiorano/test.git
 
 cd $WORKSPACE_PATH
 
@@ -14,6 +14,8 @@ cd $WORKSPACE_PATH
 #git clone $CLONE_URL
 
 cd $REPO_NAME
+
+echo $REPO_NAME
 
 #rm -rf *.yml
 rev_num=`git log --pretty=format:"%H" -n 1`
