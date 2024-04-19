@@ -8,14 +8,18 @@ REPO_NAME=test
 
 CLONE_URL=https://github.com/shubhifiorano/test.git
 
-cd $WORKSPACE_PATH
+#cd $WORKSPACE_PATH
+
+#echo pwd
 
 
 #git clone $CLONE_URL
 
-cd $REPO_NAME
+#cd $REPO_NAME
 
 echo $REPO_NAME
+
+#echo pwd
 
 #rm -rf *.yml
 rev_num=`git log --pretty=format:"%H" -n 1`
@@ -25,7 +29,9 @@ readfile()
 {
 echo "We are in readfile"	
 git diff-tree --no-commit-id --name-only --diff-filter=$1 -r $rev_num | awk -F/ '{ print $1"/"$2}' >> out.txt
-uniq out.txt $2
+sort -u out.txt > "$2"  # Sort and remove duplicates, then save to the desired filename
+#rm out.txt  # Optionally remove the temporary file
+#uniq out.txt $2
 }
 
 readfile "M" "modifiedEPs.txt"
