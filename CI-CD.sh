@@ -29,10 +29,10 @@ readfile()
 {
 echo "We are in readfile"	
 git diff-tree --no-commit-id --name-only --diff-filter=$1 -r $rev_num | awk -F/ '{ print $1"/"$2}' >> out.txt
-sort -u out.txt > "$2"  # Sort and remove duplicates, then save to the desired filename
+#sort -u out.txt > "$2"  # Sort and remove duplicates, then save to the desired filename
 uniq out.txt $2
 cat out.txt
-rm out.txt  # Optionally remove the temporary file
+rm out.txt  
 
 }
 
