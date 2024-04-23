@@ -1,27 +1,17 @@
 # Provide WORKSPACE_PATH, REPO_NAME and CLONE_URL (till .git)
-WORKSPACE_PATH=/actions-runner/_work/test
+WORKSPACE_PATH=
 
 #REPO_NAME - slash separated after your GITLAB ACCOUNT NAME eg if your GITLAB link is  https://gitlab.com/Blitzkrieg/fiorano/esb.git then REPO_NAME = fiorano/esb
 
-REPO_NAME=test
+REPO_NAME=
 #WORKSPACE PATH - this is the place where it will clone the git repo and create the zips that will be imported. This workspace cannot be runtimedata/applications/repository as it will create two folders with the same name- one will be the pre-existing one and the other the checked out one. Moreover creating the zip will lead to a conflict and correct EP might not get imported. However, if the user is not going to do any development/ create EPs on the production environment and you still want to use the same path as runtimedata/applications/repository then firstly initialize that direcrory as git direcrory by running the git init command and then edit the .git/Config file to set the head correctly. Then modify the script to replace git clone with git pull (fetch + merge). And delete/ rename the zip after it has launched successfully.
 
-CLONE_URL=https://github.com/shubhifiorano/test.git
+CLONE_URL=
 
-#cd $WORKSPACE_PATH
-
-#echo pwd
-
-
-#git clone $CLONE_URL
-
-#cd $REPO_NAME
-
-echo $REPO_NAME
-
-#echo pwd
-
-#rm -rf *.yml
+cd $WORKSPACE_PATH
+git clone $CLONE_URL
+cd $REPO_NAME
+rm -rf *.yml
 rev_num=`git log --pretty=format:"%H" -n 1`
 echo "RevNumber is "$rev_num
 
@@ -29,21 +19,16 @@ readfile()
 {
 echo "We are in readfile"	
 git diff-tree --no-commit-id --name-only --diff-filter=$1 -r $rev_num | awk -F/ '{ print $1"/"$2}' >> out.txt
-#sort -u out.txt > "$2"  # Sort and remove duplicates, then save to the desired filename
 uniq out.txt $2
-cat out.txt
-rm out.txt  
-
 }
 
 readfile "M" "modifiedEPs.txt"
-#cat out.txt
 readfile "A" "modifiedEPs.txt"
-#cat out.txt
-#rm -rf out.txt
+cat out.txt
+rm -rf out.txt
 readfile "D" "deletedEPs.txt"
-#cat out.txt
-#rm -rf out.txt
+cat out.txt
+rm -rf out.txt
 
 echo generating API KEY
 
@@ -120,9 +105,9 @@ echo Done with the multiple import
 cd $WORKSPACE_PATH/$REPO_NAME
 crc "modifiedEPs.txt"
  
-#rm -rf $WORKSPACE_PATH/$REPO_NAME
+rm -rf $WORKSPACE_PATH/$REPO_NAME
 
-#rm -rf $WORKSPACE_PATH/*.zip
+rm -rf $WORKSPACE_PATH/*.zip
 
 
 
