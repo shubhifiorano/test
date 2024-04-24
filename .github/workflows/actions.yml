@@ -1,33 +1,3 @@
-<<<<<<< HEAD
-name: github-demo
-on: 
-  push:
-      branches:
-         - master
-# defaults:
-#       run:
-#         working-directory: /githubaction
-jobs:
-  job-name:
-           runs-on: [self-hosted, test, Linux]
-           steps:
-             #- uses: actions/checkout@v3
-              # with:
-               #  fetch-depth: 0
-      #   with:
-      #    path: ./../../../../githubaction
-      # - run:
-      #     working-directory: /githubaction
-             - run:  echo "Deploying application......"
-             - run:  pwd
-             - run:  whoami
-             - run:  chmod +x /githubaction/CI-CD.sh
-             - run:  sh /githubaction/CI-CD.sh
-             - run:  echo "script completed"
-                 
-               
-       
-=======
 name: github-demo
 on: 
   push:
@@ -48,7 +18,3 @@ jobs:
       # - run:
       #     working-directory: /githubaction
              - run:  bash /githubaction/CI-CD.sh
-              
-               
-             
->>>>>>> branch 'master' of https://github.com/shubhifiorano/test
