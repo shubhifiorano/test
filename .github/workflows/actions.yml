@@ -17,15 +17,7 @@ jobs:
       #    path: ./../../../../githubaction
       # - run:
       #     working-directory: /githubaction
-             - run:  echo "Deploying application......"
-             - run:  pwd
-             - run:  whoami
-             #- run:  sh /githubaction/mytest.sh
-             - run:  chmod +x /githubaction/CI-CD.sh
-             #- run:  ./CI-CD.sh
              - run:  sh /githubaction/CI-CD.sh
-             - run:  echo "script completed"
-             - run:  echo "Application successfully deployed."
-                 
+              
                
              
